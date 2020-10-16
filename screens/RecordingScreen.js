@@ -1,16 +1,16 @@
 import React from 'react';
 import {View, Text, Button, StyleSheet} from 'react-native';
 
-const CameraScreen = () => {
+const RecordingScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Camera Screen</Text>
+      <Text>Recording Screen</Text>
       <Button title="Click Here" onPress={() => alert('Button Clicked!')} />
     </View>
   );
 };
 
-export default CameraScreen;
+export default RecordingScreen;
 
 const styles = StyleSheet.create({
   container: {
