@@ -1,0 +1,162 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.donewithit"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="16"
+9        android:targetSdkVersion="29" />
+10
+11    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+11-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/debug/AndroidManifest.xml:5:5-77
+11-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/debug/AndroidManifest.xml:5:22-75
+12    <uses-permission android:name="android.permission.INTERNET" />
+12-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:4:5-67
+12-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:4:22-64
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:5:5-65
+13-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:5:22-62
+14    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+14-->[com.facebook.flipper:flipper:0.54.0] /Users/shuvayan/.gradle/caches/transforms-2/files-2.1/2fa344e99fbc8cc928a5b46ed302cce1/jetified-flipper-0.54.0/AndroidManifest.xml:16:5-76
+14-->[com.facebook.flipper:flipper:0.54.0] /Users/shuvayan/.gradle/caches/transforms-2/files-2.1/2fa344e99fbc8cc928a5b46ed302cce1/jetified-flipper-0.54.0/AndroidManifest.xml:16:22-73
+15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+15-->[:react-native-fs] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-81
+15-->[:react-native-fs] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-fs/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-78
+16
+17    <queries>
+17-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:10:5-14:15
+18        <intent>
+18-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:9-13:18
+19            <action android:name="android.media.action.IMAGE_CAPTURE" />
+19-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-73
+19-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:21-70
+20        </intent>
+21    </queries>
+22
+23    <uses-permission android:name="android.permission.WAKE_LOCK" />
+23-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-68
+23-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:22-65
+24    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+24-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-77
+24-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:22-74
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+25-->[com.google.android.exoplayer:exoplayer-core:2.10.1] /Users/shuvayan/.gradle/caches/transforms-2/files-2.1/fcf55119962a4136f9c17c7b553a2910/jetified-exoplayer-core-2.10.1/AndroidManifest.xml:24:5-79
+25-->[com.google.android.exoplayer:exoplayer-core:2.10.1] /Users/shuvayan/.gradle/caches/transforms-2/files-2.1/fcf55119962a4136f9c17c7b553a2910/jetified-exoplayer-core-2.10.1/AndroidManifest.xml:24:22-76
+26
+27    <application
+27-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:8:5-28:19
+28        android:name="com.donewithit.MainApplication"
+28-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:10:7-38
+29        android:allowBackup="false"
+29-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:14:7-34
+30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+30-->[androidx.core:core:1.2.0-beta01] /Users/shuvayan/.gradle/caches/transforms-2/files-2.1/b33c2315939a958b6c8a0bee67319588/core-1.2.0-beta01/AndroidManifest.xml:24:18-86
+31        android:debuggable="true"
+32        android:icon="@mipmap/ic_launcher"
+32-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:12:7-41
+33        android:label="@string/app_name"
+33-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:11:7-39
+34        android:roundIcon="@mipmap/ic_launcher_round"
+34-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:13:7-52
+35        android:theme="@style/AppTheme"
+35-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:15:7-38
+36        android:usesCleartextTraffic="true" >
+36-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/debug/AndroidManifest.xml:7:18-53
+37        <activity
+37-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:16:7-26:18
+38            android:name="com.donewithit.MainActivity"
+38-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:17:9-37
+39            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode"
+39-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:19:9-86
+40            android:label="@string/app_name"
+40-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:18:9-41
+41            android:launchMode="singleTask"
+41-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:20:9-40
+42            android:windowSoftInputMode="adjustResize" >
+42-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:21:9-51
+43            <intent-filter>
+43-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:22:9-25:25
+44                <action android:name="android.intent.action.MAIN" />
+44-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:23:13-65
+44-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:23:21-62
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:24:13-73
+46-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:24:23-70
+47            </intent-filter>
+48        </activity>
+49        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+49-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:27:7-84
+49-->/Volumes/Elements/react_native/DoneWithIt/android/app/src/main/AndroidManifest.xml:27:17-81
+50
+51        <provider
+51-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:9-27:20
+52            android:name="androidx.core.content.FileProvider"
+52-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-62
+53            android:authorities="com.donewithit.provider"
+53-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-60
+54            android:exported="false"
+54-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:13-37
+55            android:grantUriPermissions="true" >
+55-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:13-47
+56            <meta-data
+56-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:58
+57                android:name="android.support.FILE_PROVIDER_PATHS"
+57-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+58                android:resource="@xml/provider_paths" />
+58-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-55
+59        </provider>
+60
+61        <activity
+61-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:9-31:72
+62            android:name="com.yalantis.ucrop.UCropActivity"
+62-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:13-60
+63            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+63-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:13-69
+64
+65        <provider
+65-->[:react-native-share] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-20:20
+66            android:name="cl.json.RNShareFileProvider"
+66-->[:react-native-share] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-55
+67            android:authorities="com.donewithit.rnshare.fileprovider"
+67-->[:react-native-share] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:13-72
+68            android:exported="false"
+68-->[:react-native-share] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:13-37
+69            android:grantUriPermissions="true" >
+69-->[:react-native-share] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-share/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:13-47
+70            <meta-data
+70-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-26:58
+71                android:name="android.support.FILE_PROVIDER_PATHS"
+71-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:17-67
+72                android:resource="@xml/share_download_paths" />
+72-->[:react-native-image-crop-picker] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-image-crop-picker/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:26:17-55
+73        </provider> <!-- The main service, handles playback, playlists and media buttons -->
+74        <service
+74-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:9-24:19
+75            android:name="com.guichaguri.trackplayer.service.MusicService"
+75-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-75
+76            android:enabled="true"
+76-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:19:13-35
+77            android:exported="true" >
+77-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:13-36
+78            <intent-filter>
+78-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-23:29
+79                <action android:name="android.intent.action.MEDIA_BUTTON" />
+79-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:17-77
+79-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:25-74
+80            </intent-filter>
+81        </service> <!-- A receiver that will receive media buttons. Required on pre-lollipop devices -->
+82        <receiver android:name="androidx.media.session.MediaButtonReceiver" >
+82-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:9-31:20
+82-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:19-76
+83            <intent-filter>
+83-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:13-23:29
+84                <action android:name="android.intent.action.MEDIA_BUTTON" />
+84-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:17-77
+84-->[:react-native-track-player] /Volumes/Elements/react_native/DoneWithIt/node_modules/react-native-track-player/android/build/intermediates/library_manifest/debug/AndroidManifest.xml:22:25-74
+85            </intent-filter>
+86        </receiver>
+87    </application>
+88
+89</manifest>

@@ -1,0 +1,262 @@
+import React, {useRef, useEffect, useState} from 'react';
+import {
+  View,
+  SafeAreaView,
+  Text,
+  Image,
+  FlatList,
+  Dimensions,
+  Animated,
+  StyleSheet,
+  TouchableOpacity,
+} from 'react-native';
+
+import {
+  TrackPlayer,
+  Capability,
+  useTrackPlayerEvents,
+  usePlaybackState,
+  TrackPlayerEvents,
+  STATE_PLAYING,
+  Event,
+} from 'react-native-track-player';
+import Icon from 'react-native-vector-icons/Entypo';
+
+import Controller from './Controller';
+import SliderComp from './SliderComp';
+
+const {width, height} = Dimensions.get('window');
+
+// const events = [
+//   TrackPlayerEvents.PLAYBACK_STATE,
+//   TrackPlayerEvents.PLAYBACK_ERROR
+// ];
+
+export default function PlayerScreen({audio}) {
+  const scrollX = useRef(new Animated.Value(0)).current;
+
+  const slider = useRef(null);
+  const isPlayerReady = useRef(false);
+
+  // const index = useRef(0);
+  // const [songIndex, setSongIndex] = useState(0);
+
+  const isItFromUser = useRef(true);
+
+  // for tranlating the album art
+  const position = useRef(Animated.divide(scrollX, width)).current;
+  const playbackState = usePlaybackState();
+  // console.log(playbackState)
+  useEffect(() => {
+    // scrollX.addListener(({value}) => {
+    //   const val = Math.round(value / width);
+
+    //   if (val){
+    //     console.log(playbackState)
+    //     TrackPlayer.destroy();
+    //   }
+
+    // });
+
+    TrackPlayer.setupPlayer().then(async () => {
+      await TrackPlayer.reset();
+      await TrackPlayer.add([audio]);
+      TrackPlayer.play();
+      isPlayerReady.current = true;
+
+      await TrackPlayer.updateOptions({
+        stopWithApp: false,
+        alwaysPauseOnInterruption: true,
+        capabilities: [
+          Capability.Play,
+          Capability.Pause,
+          // Capability.SkipToNext,
+          // Capability.SkipToPrevious,
+        ],
+      });
+      // //add listener on track change
+      // TrackPlayer.addEventListener(Event.PlaybackTrackChanged, async (e) => {
+      //   console.log('song ended', e);
+
+      //   const trackId = (await TrackPlayer.getCurrentTrack()) - 1; //get the current id
+
+      //   console.log('track id', trackId, 'index', index.current);
+
+      //   if (trackId !== index.current) {
+      //     setSongIndex(trackId);
+      //     isItFromUser.current = false;
+
+      //     if (trackId > index.current) {
+      //       goNext();
+      //     } else {
+      //       goPrv();
+      //     }
+      //     setTimeout(() => {
+      //       isItFromUser.current = true;
+      //     }, 200);
+      //   }
+
+      //   // isPlayerReady.current = true;
+      // });
+
+      //monitor intterupt when other apps start playing music
+      TrackPlayer.addEventListener(Event.RemoteDuck, (e) => {
+        // console.log(e);
+        if (e.paused) {
+          // if pause true we need to pause the music
+          TrackPlayer.pause();
+        } else {
+          TrackPlayer.play();
+        }
+      });
+    });
+
+    return () => {
+      scrollX.removeAllListeners();
+      TrackPlayer.destroy();
+
+      // exitPlayer();
+    };
+  }, []);
+
+  // // change the song when index changes
+  // useEffect(() => {
+  //   if (isPlayerReady.current && isItFromUser.current) {
+  //     TrackPlayer.skip(songs[songIndex].id)
+  //       .then((_) => {
+  //         console.log('changed track');
+  //       })
+  //       .catch((e) => console.log('error in changing track ', e));
+  //   }
+  //   index.current = songIndex;
+  // }, [songIndex]);
+
+  const exitPlayer = async () => {
+    try {
+      await TrackPlayer.stop();
+    } catch (error) {
+      console.error('exitPlayer', error);
+    }
+  };
+
+  // const goNext = async () => {
+  //   slider.current.scrollToOffset({
+  //     offset: (index.current + 1) * width,
+  //   });
+
+  //   await TrackPlayer.play();
+  // };
+  // const goPrv = async () => {
+  //   slider.current.scrollToOffset({
+  //     offset: (index.current - 1) * width,
+  //   });
+
+  //   await TrackPlayer.play();
+  // };
+
+  const renderItem = ({index}) => {
+    return (
+      <Animated.View
+        style={{
+          alignItems: 'center',
+          width: width,
+          transform: [
+            {
+              translateX: Animated.multiply(
+                Animated.add(position, -index),
+                -100,
+              ),
+            },
+          ],
+        }}>
+        <Animated.Image
+          source={
+            playbackState === 'playing' || playbackState === 3
+              ? require('./static/player.gif')
+              : require('./static/player.jpg')
+          }
+          style={{width: 320, height: 320, borderRadius: 5}}
+        />
+      </Animated.View>
+    );
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={{alignItems: 'center'}}>
+        <Text style={[styles.textLight, {fontWeight: 'bold', fontSize: 22}]}>
+          {' '}
+          Now Playing
+        </Text>
+        <Text
+          style={[
+            styles.text,
+            {fontWeight: '500', fontSize: 20, marginTop: 8},
+          ]}>
+          {' '}
+          AudioBook
+        </Text>
+      </View>
+      <TouchableOpacity
+        style={{position: 'absolute', alignSelf: 'flex-start', marginLeft: 10}}
+        onPress={() => alert('Dropdown', 'dropdown')}>
+        <Icon name="chevron-small-down" size={32} color="#EAF0F1" />
+      </TouchableOpacity>
+      <SafeAreaView style={{height: 320}}>
+        <Animated.FlatList
+          ref={slider}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          scrollEventThrottle={16}
+          data={[audio]}
+          renderItem={renderItem}
+          keyExtractor={(item) => item.id}
+          onScroll={Animated.event(
+            [{nativeEvent: {contentOffset: {x: scrollX}}}],
+            {useNativeDriver: true},
+          )}
+        />
+      </SafeAreaView>
+      <View>
+        <Text style={[styles.title, {paddingBottom: 8}]}>{audio.title}</Text>
+        {/* <Text style={styles.artist}>Bisakh</Text> */}
+      </View>
+
+      <SliderComp />
+
+      <Controller />
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 28,
+    textAlign: 'center',
+    fontWeight: '600',
+    textTransform: 'capitalize',
+    color: '#ffffff',
+  },
+  textLight: {
+    color: '#EAF0F1',
+  },
+  textWhite: {
+    color: '#ffff',
+  },
+  text: {
+    color: '#8E97A6',
+  },
+  artist: {
+    fontSize: 18,
+    textAlign: 'center',
+    color: '#ffffff',
+    textTransform: 'capitalize',
+  },
+  container: {
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    height: height,
+    maxHeight: 600,
+  },
+});
